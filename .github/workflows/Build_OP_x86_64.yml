@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_x86_64
+name: Build_x86_64-1
 
 on: 
   release:
@@ -18,8 +18,8 @@ on:
   #schedule:
   #  - cron: 0 8 * * 5
   
-  #watch:
-  #  types: [started]
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -81,7 +81,7 @@ jobs:
 
     - name: Configuration Customization - Build_x86_64
       env:
-        CONFIG_FILE: 'x86_64.config'
+        CONFIG_FILE: 'x86_64-1.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
